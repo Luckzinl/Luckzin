@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Luckzin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .login-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0095f6;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #333;
+            color: #fff;
+        }
+        .input-field::placeholder {
+            color: #b2b2b2;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn:disabled {
+            background-color: #1e3a5c;
+        }
+        .error-message {
+            color: #ff4d4d;
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-title">LUCKZIN</div>
+        <input type="text" id="username" class="input-field" placeholder="Nome de usuário">
+        <input type="password" id="password" class="input-field" placeholder="Senha">
+        <button class="btn" id="login-btn">Entrar</button>
+        <p class="error-message" id="error-msg">Nome de usuário ou senha incorretos</p>
+    </div>
+
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const errorMsg = document.getElementById('error-msg');
+
+        loginBtn.addEventListener('click', function() {
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // Verifica se o nome de usuário e senha são válidos
+            if ((username === 'Luckzin9' && password === 'admin') || 
+                (username === '1234' && password === '12345') || 
+                (username === 'user1' && password === 'pass1') || 
+                (username === 'admin' && password === 'root')) {
+                window.location.href = 'proxima_pagina.html'; // redireciona para a próxima página
+            } else {
+                errorMsg.style.display = 'block'; // mostra a mensagem de erro
+            }
+        });
+    </script>
+
+</body>
+</html>
